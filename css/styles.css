@@ -212,11 +212,11 @@ margin-right: 15px;
         display: grid;
         grid-template-columns: 1fr;
     }
-    header .nav ul{
+    header nav div ul{
         display: flex;
         flex-direction: column;
     }
-    header .nav ul li{
+    header nav div ul li{
         font-size: 25px;
     }
     footer {
@@ -243,12 +243,12 @@ margin-right: 15px;
 
 
 @media screen and (min-width:788px){
-    header .nav ul{
+    header nav div ul{
         display: flex;
         justify-content: center;
         flex-direction: row;
     }
-    header .nav ul li a{
+    header nav div ul li a{
         text-align: center;
     }
     footer{
@@ -272,6 +272,7 @@ margin-right: 15px;
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
+
    
     .promo__item{
         display: grid;
@@ -283,7 +284,7 @@ margin-right: 15px;
 
 
 @media screen and (min-width:1200px) {
-    header .nav ul{
+    header nav div ul{
         display: flex;
         justify-content: center;
         flex-direction: row;
@@ -292,7 +293,7 @@ margin-right: 15px;
         display: grid;
         grid-template-columns: 1fr 5fr;
     }
-    .nav{
+    nav{
         display: flex;
         flex-direction: column;
         justify-content: space-around;
