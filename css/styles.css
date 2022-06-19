@@ -5,11 +5,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+    background-image: url(/imagenes/7eda6f0734659cfbe1443afca360d97a.jpg);
+    background-size: 100%;
+}
+
 /* Aplicando estilo a mi encabezado */
+
 header{
-    display: grid;
-    grid-template-columns: 1fr;
-    background: linear-gradient(150deg,black, rgb(51, 51, 51), black);
+    background: linear-gradient(150deg,rgba(0, 0, 0, 0.856), rgba(51, 51, 51, 0.801), rgba(0, 0, 0, 0.842));
     background-size: 400% 300%;
     animation: BgGradient 5s ease infinite;
 }   
@@ -18,15 +23,8 @@ header{
     50%{background-position: 100% 50%;}  
     100%{background-position: 0% 50%;}  
 }
-header h1{
-    padding: 10px;
-    color: rgb(255, 255, 255);
-    display: flex;
-    font-size: 35px;
-    font-family: Georgia;
-    justify-content: center;
-    align-self: center;
-}
+
+
 .nav{
     display: flex;
     flex-direction: column;
@@ -36,7 +34,7 @@ header nav ul{
     display: flex;
     flex-direction: column;
 }
-    header nav ul li {
+header nav ul li {
     display: flex;
     list-style: none;
 }
@@ -56,35 +54,49 @@ header nav ul li a{
     background-color: black ;
     border-radius: 10px;
 }
-.logo{
+
+header .encabezado{
     display: flex;
-    justify-content: center;
 }
+
+header div .logo img{
+    width: 90px;
+    height: 90px;
+}
+
 main{
     display: grid;
     grid-template-columns: 1fr;
     min-height: 250px;
-    background-color: rgb(139, 94, 52);
-        
+    background-color: rgba(139, 94, 52,0.3);      
 }
 
-main div h2 {
-    text-align: center;
+main .text-center{
+    margin: 15px;
+    color: rgba(255, 255, 255);
+    font-size: 35px;
+    font-family: Georgia;
+    justify-content: center;
+    background-color: rgba(22, 12, 3, 0.37);
+    max-width: fit-content;
+    margin:auto
+}
+
+main .text-secundario{
     color: rgb(255, 255, 255);
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 30px;
     margin: 80px;
+    padding: 17px;
+    background-color: rgba(22, 12, 3, 0.37);
+    max-width: fit-content;
+    margin:auto
 }
 
-.imagen-2 img {
-    padding: 25px;
+main .texto-2{
+    margin: 80px;
 }
 
-
-.imagen-2{
-    display: flex;
-    justify-content: center;
-}
 footer {
     margin: 0;
     padding: 0;
@@ -240,7 +252,6 @@ margin-right: 15px;
     grid-template-columns: 1fr;
    }
 } 
-
 
 @media screen and (min-width:788px){
     header nav div ul{
