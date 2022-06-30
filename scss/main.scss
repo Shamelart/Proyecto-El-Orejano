@@ -6,7 +6,7 @@
 }
 /* Aplicando estilo al body en general*/
 body{
-    background-image: url(/imagenes/Imagen_Principal.jpg);
+    background-image: url(/imagenes/portada.jpg);
     background-attachment: fixed;
     background-size: cover;
 }
@@ -62,21 +62,22 @@ main{
     grid-template-columns: 1fr;
     min-height: 500px;
 }
-.text-1{
+%texto{
     color: rgb(255, 255, 255);
-    font-size: 35px;
     font-family: Georgia;
     justify-content: center;
-    background-color: rgba(22, 12, 3, 0.37);
+    background-color: rgba(22, 12, 3, 0.469);
     max-width: fit-content;
     margin:auto;
+}
+// uso de extend
+.text-1{
+    @extend %texto;
+    font-size: 35px;
+    
 }.text-secundario{
-    color: rgb(255, 255, 255);
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 30px;
-    background-color: rgba(22, 12, 3, 0.37);
-    max-width: fit-content;
-    margin:auto;
+    @extend %texto;
+    font-size: 28px;
 }
 /* Colocando estilos al footer */
 footer {
@@ -88,7 +89,7 @@ footer {
 }
 footer div {
     color: rgb(255, 255, 255);
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia;
     font-size: 16px;    
     grid-template-rows: 1fr 1fr 1fr;
     padding: 5px;
@@ -125,18 +126,14 @@ footer a{
     justify-content: center;
 }
 /* page picadas */
-.picadas{
+// uso de mixin
+@mixin regalo{
     display: flex;
-    flex-direction: column;
-}
-.picada{
-    display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.4);
-}   
-.picadas__item{
+}
+@mixin pica{
     display: grid;
     grid-template-columns: 1fr;
     font-size: 1rem;
@@ -144,29 +141,29 @@ footer a{
     margin: 2em 0;
     gap: 3em;
 }
+.picadas{
+    display: flex;
+    flex-direction: column;
+}
+.picada{
+    @include regalo;
+}   
+.picadas__item{
+    @include pica;
+}
 .picada img {
-    width: 30%;
+    width: 35%;
     padding: 3px; 
 }
 .tabla{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.4);
+    @include regalo
 }
 .Regalo__item{
-    display: grid;
-    grid-template-columns: 1fr;
-    font-size: 1.5rem;
-    color: rgb(255, 255, 255);
-    margin: 2em 0;
-    gap: 3em;
+    @include pica;
 }
 .tabla img {
     width: 30%;
     padding: 50px;
-    
 }
 
 /* pages promo */
@@ -180,14 +177,14 @@ footer a{
     margin: 2em 0;
 }
 .promo img {
-    width: 30%;
+    width: 35%;
     padding: 12px;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* pages Contactos */
 .contactoContenedor{
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.483);
 }
 
 /* Aplicando Queries */

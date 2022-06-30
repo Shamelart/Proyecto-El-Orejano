@@ -7,7 +7,7 @@
 
 /* Aplicando estilo al body en general*/
 body {
-  background-image: url(/imagenes/Imagen_Principal.jpg);
+  background-image: url(/imagenes/portada.jpg);
   background-attachment: fixed;
   background-size: cover; }
 
@@ -66,22 +66,19 @@ main {
   grid-template-columns: 1fr;
   min-height: 500px; }
 
-.text-1 {
+.text-1, .text-secundario {
   color: white;
-  font-size: 35px;
   font-family: Georgia;
   justify-content: center;
-  background-color: rgba(22, 12, 3, 0.37);
+  background-color: rgba(22, 12, 3, 0.469);
   max-width: fit-content;
   margin: auto; }
 
+.text-1 {
+  font-size: 35px; }
+
 .text-secundario {
-  color: white;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 30px;
-  background-color: rgba(22, 12, 3, 0.37);
-  max-width: fit-content;
-  margin: auto; }
+  font-size: 28px; }
 
 /* Colocando estilos al footer */
 footer {
@@ -93,7 +90,7 @@ footer {
 
 footer div {
   color: white;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia;
   font-size: 16px;
   grid-template-rows: 1fr 1fr 1fr;
   padding: 5px;
@@ -136,7 +133,6 @@ footer a {
 
 .picada {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.4); }
@@ -150,20 +146,19 @@ footer a {
   gap: 3em; }
 
 .picada img {
-  width: 30%;
+  width: 35%;
   padding: 3px; }
 
 .tabla {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.4); }
 
 .Regalo__item {
   display: grid;
   grid-template-columns: 1fr;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: white;
   margin: 2em 0;
   gap: 3em; }
@@ -183,13 +178,13 @@ footer a {
   margin: 2em 0; }
 
 .promo img {
-  width: 30%;
+  width: 35%;
   padding: 12px;
   background-color: rgba(0, 0, 0, 0.4); }
 
 /* pages Contactos */
 .contactoContenedor {
-  background-color: rgba(0, 0, 0, 0.4); }
+  background-color: rgba(0, 0, 0, 0.483); }
 
 /* Aplicando Queries */
 @media screen and (min-width: 480px) {
