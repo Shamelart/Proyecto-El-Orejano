@@ -53,15 +53,18 @@ header .encabezado{
     display: flex;
 }
 header div .logo img{
-    width: 140px;
-    height: 80px;
+    width: 150px;
+    height:80px;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 /* Colocando estiulos al main */
 main{
     display: grid;
     grid-template-columns: 1fr;
-    min-height: 500px;
+    min-height: 720px;
 }
+// uso de extend
 %texto{
     color: rgb(255, 255, 255);
     font-family: Georgia;
@@ -70,7 +73,6 @@ main{
     max-width: fit-content;
     margin:auto;
 }
-// uso de extend
 .text-1{
     @extend %texto;
     font-size: 35px;
@@ -107,7 +109,7 @@ footer a{
     grid-template-columns: 1fr;
     font-size: 0.2rem;
     color: rgb(255, 255, 255);
-    margin: 2em 0;
+    margin: 8em 0;
     gap: 3em;
 }
 .producto{
@@ -117,8 +119,8 @@ footer a{
     background-color: rgba(0, 0, 0, 0.4);
 }
 .producto img{
-    width: 40%;
-    padding: 3px; 
+    width: 20%;
+    padding: 1px; 
 }
 .formato{
     display: flex;
@@ -132,13 +134,15 @@ footer a{
     flex-direction: column;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.4);
+    margin:auto;
+   
 }
 @mixin pica{
     display: grid;
     grid-template-columns: 1fr;
     font-size: 1rem;
     color: rgb(255, 255, 255);
-    margin: 2em 0;
+    margin: 2em 0em;
     gap: 3em;
 }
 .picadas{
@@ -152,8 +156,7 @@ footer a{
     @include pica;
 }
 .picada img {
-    width: 35%;
-    padding: 3px; 
+    width: 55%;
 }
 .tabla{
     @include regalo
@@ -162,8 +165,8 @@ footer a{
     @include pica;
 }
 .tabla img {
-    width: 30%;
-    padding: 50px;
+    width: 55%;
+   
 }
 
 /* pages promo */
@@ -185,6 +188,9 @@ footer a{
 /* pages Contactos */
 .contactoContenedor{
     background-color: rgba(0, 0, 0, 0.483);
+    margin-top: 50px;
+    margin-bottom: 250px;
+    
 }
 
 /* Aplicando Queries */
