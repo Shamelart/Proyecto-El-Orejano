@@ -5,17 +5,36 @@
   padding: 0;
   box-sizing: border-box; }
 
+.text-1, .text-secundario {
+  color: white;
+  font-family: Georgia;
+  justify-content: center;
+  background-color: rgba(22, 12, 3, 0.656);
+  max-width: fit-content;
+  margin: auto;
+  position: relative; }
+
 /* Aplicando estilo al body en general*/
 body {
   background-image: url(/imagenes/portada.jpg);
   background-attachment: fixed;
-  background-size: cover; }
+  background-size: cover;
+  position: relative; }
+
+body:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: antiquewhite;
+  position: absolute;
+  opacity: 0.25; }
 
 /* Aplicando estilo a mi encabezado */
 header {
   background: linear-gradient(150deg, rgba(0, 0, 0, 0.856), rgba(51, 51, 51, 0.801), rgba(0, 0, 0, 0.842));
   background-size: 400% 300%;
-  animation: BgGradient 5s ease infinite; }
+  animation: BgGradient 5s ease infinite;
+  position: relative; }
 
 @keyframes BgGradient {
   0% {
@@ -26,11 +45,6 @@ header {
     background-position: 0% 50%; } }
 
 /* Aplicando estilo al menu de navegación */
-.nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around; }
-
 header nav ul {
   flex-direction: column; }
 
@@ -39,8 +53,11 @@ header nav ul li {
   list-style: none; }
 
 header nav ul li a:hover {
-  background-color: gray;
+  background-color: grey;
   transition: 0.5s; }
+
+a:hover {
+  color: black; }
 
 header nav ul li a {
   max-width: fit-content;
@@ -54,18 +71,20 @@ header nav ul li a {
   border-radius: 10px; }
 
 header .encabezado {
-  display: flex; }
-
-header div .logo img:hover {
-  background-color: gray;
-  transition: 0.5s; }
+  display: flex;
+  justify-content: space-between; }
 
 header div .logo img {
-  width: 150px;
+  width: 180px;
   height: 80px;
-  margin-left: 10px;
+  filter: invert(1);
+  margin-left: 20px;
   margin-top: 10px;
-  background-color: rgba(22, 12, 3, 0.166); }
+  background-color: rgba(22, 12, 3, 0.166);
+  position: relative; }
+  header div .logo img img:hover {
+    background-color: grey;
+    transition: 0.5s; }
 
 /* Colocando estiulos al main */
 main {
@@ -73,19 +92,12 @@ main {
   grid-template-columns: 1fr;
   min-height: 720px; }
 
-.text-1, .text-secundario {
-  color: white;
-  font-family: Georgia;
-  justify-content: center;
-  background-color: rgba(22, 12, 3, 0.469);
-  max-width: fit-content;
-  margin: auto; }
-
 .text-1 {
   font-size: 35px; }
 
 .text-secundario {
-  font-size: 28px; }
+  font-size: 28px;
+  margin-top: 50px; }
 
 /* Colocando estilos al footer */
 footer {
@@ -93,7 +105,8 @@ footer {
   border-style: dashed;
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  position: relative; }
 
 footer div {
   color: white;
@@ -102,9 +115,8 @@ footer div {
   grid-template-rows: 1fr 1fr 1fr;
   padding: 5px;
   text-align: center; }
-
-footer a {
-  color: white; }
+  footer div a {
+    color: white; }
 
 .redes a {
   margin-right: 15px; }
@@ -114,19 +126,20 @@ footer a {
   display: grid;
   grid-template-columns: 1fr;
   font-size: 1rem;
+  text-align: center;
   color: white;
-  margin: 8em 0;
+  margin: 5em 2em;
   gap: 3em; }
 
 .producto {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.4); }
-
-.producto img {
-  width: 60%;
-  padding: 1px; }
+  background-color: rgba(0, 0, 0, 0.4);
+  position: relative; }
+  .producto img {
+    width: 80%;
+    padding: 0.5px; }
 
 .formato {
   display: flex;
@@ -136,25 +149,27 @@ footer a {
 /* page picadas */
 .picadas {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  margin-left: 50px;
+  position: relative; }
 
 .picada {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.4);
-  margin: auto; }
+  margin: auto;
+  position: relative; }
+  .picada img {
+    width: 80%; }
 
 .picadas__item {
   display: grid;
   grid-template-columns: 1fr;
   font-size: 1rem;
   color: white;
-  margin: 2em 0em;
+  margin: 2em 2em;
   gap: 3em; }
-
-.picada img {
-  width: 55%; }
 
 .tabla {
   display: flex;
@@ -162,45 +177,46 @@ footer a {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.4);
   margin: auto; }
+  .tabla img {
+    width: 80%; }
 
 .Regalo__item {
   display: grid;
   grid-template-columns: 1fr;
   font-size: 1rem;
   color: white;
-  margin: 2em 0em;
+  margin: 2em 2em;
   gap: 3em; }
-
-.tabla img {
-  width: 55%; }
 
 /* pages promo */
 .promo__item {
   display: grid;
-  grid-template-columns: 1fr; }
+  grid-template-columns: 1fr;
+  position: relative; }
 
 .promo {
   display: flex;
   justify-content: center;
-  margin: 2em 0; }
-
-.promo img {
-  width: 50%;
-  padding: 12px;
-  background-color: rgba(0, 0, 0, 0.4); }
+  margin: 4em 0; }
+  .promo img {
+    width: 70%;
+    height: 55%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.4); }
 
 /* pages Contactos */
 .contactoContenedor {
-  background-color: rgba(0, 0, 0, 0.483);
+  background-color: rgba(0, 0, 0, 0.56);
   margin-top: 50px;
-  margin-bottom: 250px; }
+  margin-bottom: 250px;
+  position: relative; }
 
 /* Aplicando Queries */
 @media screen and (min-width: 480px) {
   header {
     display: grid;
     grid-template-columns: 1fr; }
-  header nav div ul {
+  header nav div {
     display: flex;
     flex-direction: column; }
   header nav div ul li {
@@ -238,21 +254,22 @@ footer a {
   /* aplicando medias quieries page producto */
   .producto__item {
     display: grid;
-    grid-template-columns: 1fr 1fr; }
+    grid-template-columns: 1fr 1fr 1fr 1fr; }
   .producto__item .producto p {
     font-size: 1.7rem; }
   /* aplicando medias quieries page picadas y souveniers */
   .picadas__item {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    font-size: 1.3rem; }
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    font-size: 1.4rem; }
   .Regalo__item {
     display: grid;
-    grid-template-columns: 1fr 1fr; }
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    font-size: 1.4rem; }
   /* aplicando medias quieries page promos */
   .promo__item {
     display: grid;
-    grid-template-columns: 1fr 1fr; } }
+    grid-template-columns: 1fr 1fr 1fr 1fr; } }
 
 @media screen and (min-width: 1200px) {
   header {
@@ -273,4 +290,4 @@ footer a {
   /* aplicando medias quieries page producto */
   .producto__item {
     display: grid;
-    grid-template-columns: 1fr 1fr; } }
+    grid-template-columns: 1fr 1fr 1fr 1fr; } }

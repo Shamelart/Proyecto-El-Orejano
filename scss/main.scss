@@ -4,29 +4,40 @@
     padding: 0;
     box-sizing: border-box;
 }
+//archivos utilities
+@import "utilities/extend";
+@import "utilities/mixin";
+@import "utilities/variables";
+
 /* Aplicando estilo al body en general*/
 body{
     background-image: url(/imagenes/portada.jpg);
     background-attachment: fixed;
     background-size: cover;
+    position: relative;
+}
+body:before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: antiquewhite;
+    position: absolute;
+    opacity: 0.25;
 }
 /* Aplicando estilo a mi encabezado */
 header{
     background: linear-gradient(150deg,rgba(0, 0, 0, 0.856), rgba(51, 51, 51, 0.801), rgba(0, 0, 0, 0.842));
     background-size: 400% 300%;
     animation: BgGradient 5s ease infinite;
+    position: relative;
 }
 @keyframes BgGradient{
-    0%{background-position: 0% 50%;}
-    50%{background-position: 100% 50%;}  
-    100%{background-position: 0% 50%;}  
+    0%{background-position: 0% 50%};
+    50%{background-position: 100% 50%};
+    100%{background-position: 0% 50%};
 }
 /* Aplicando estilo al menu de navegación */
-.nav{
-    display: flex;
-    flex-direction: column;
-    justify-content:space-around;
-}
+
 header nav ul{
     flex-direction: column;
 }
@@ -35,48 +46,46 @@ header nav ul li {
     list-style: none;
 }
 header nav ul li a:hover{
-    background-color: gray;
+    background-color: $nav-Color;
     transition: 0.5s;
+}
+a:hover{
+    color: $hover-Color;
 }
 header nav ul li a{
     max-width: fit-content;
-    padding:8px;
+    padding: 8px;
     margin: 9px;
     font-family: Georgia;
     font-size: 15;
-    color: rgb(255, 255, 255);
+    color: $color;
     text-decoration: none;
-    background-color: black;
+    background-color: $hover-Color;
     border-radius: 10px;
 }
+
 header .encabezado{
     display: flex;
+    justify-content: space-between;
 }
-header div .logo img:hover{
-    background-color: gray;
-    transition: 0.5s;
-}
+
 header div .logo img{
-    width: 150px;
+    width: 180px;
     height:80px;
-    margin-left: 10px;
+    filter: invert(1);
+    margin-left: 20px;
     margin-top: 10px;
     background-color: rgba(22, 12, 3, 0.166);
+    position: relative;
+    img:hover{
+        background-color: $nav-Color;
+        transition: 0.5s;}
 }
 /* Colocando estiulos al main */
 main{
     display: grid;
     grid-template-columns: 1fr;
     min-height: 720px;
-}
-// uso de extend
-%texto{
-    color: rgb(255, 255, 255);
-    font-family: Georgia;
-    justify-content: center;
-    background-color: rgba(22, 12, 3, 0.469);
-    max-width: fit-content;
-    margin:auto;
 }
 .text-1{
     @extend %texto;
@@ -85,6 +94,7 @@ main{
 }.text-secundario{
     @extend %texto;
     font-size: 28px;
+    margin-top: 50px
 }
 /* Colocando estilos al footer */
 footer {
@@ -93,17 +103,17 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 footer div {
-    color: rgb(255, 255, 255);
+    color: $color;
     font-family: Georgia;
     font-size: 16px;    
     grid-template-rows: 1fr 1fr 1fr;
     padding: 5px;
     text-align: center;
-}
-footer a{
-    color: white;
+    a{
+      color: $color;}
 }
 .redes a{
     margin-right: 15px;
@@ -113,19 +123,21 @@ footer a{
     display: grid;
     grid-template-columns: 1fr;
     font-size: 1rem;
-    color: rgb(255, 255, 255);
-    margin: 8em 0;
+    text-align: center;
+    color: $color;
+    margin: 5em 2em;
     gap: 3em;
 }
 .producto{
     display: flex;
     flex-direction: column;
     align-items:center;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-.producto img{
-    width: 60%;
-    padding: 1px; 
+    background-color: $back-Color;
+    position: relative;
+    img{
+        width: 80%;
+        padding: 0.5px; 
+    }
 }
 .formato{
     display: flex;
@@ -133,69 +145,56 @@ footer a{
     justify-content: center;
 }
 /* page picadas */
-// uso de mixin
-@mixin regalo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.4);
-    margin:auto;
-   
-}
-@mixin pica{
-    display: grid;
-    grid-template-columns: 1fr;
-    font-size: 1rem;
-    color: rgb(255, 255, 255);
-    margin: 2em 0em;
-    gap: 3em;
-}
 .picadas{
     display: flex;
     flex-direction: column;
+    margin-left: 50px;
+    position: relative;
 }
 .picada{
     @include regalo;
+    position: relative;
+    img {
+        width: 80%;
+    }
 }   
 .picadas__item{
     @include pica;
 }
-.picada img {
-    width: 55%;
-}
 .tabla{
-    @include regalo
+    @include regalo;
+    img {
+        width: 80%;
+    }
 }
 .Regalo__item{
     @include pica;
-}
-.tabla img {
-    width: 55%;
-   
 }
 
 /* pages promo */
 .promo__item{
     display: grid;
     grid-template-columns: 1fr;
+    position: relative;
 }
 .promo{
     display: flex;
     justify-content: center;
-    margin: 2em 0;
-}
-.promo img {
-    width: 50%;
-    padding: 12px;
-    background-color: rgba(0, 0, 0, 0.4);
+    margin: 4em 0;
+    img {
+        width: 70%;
+        height: 55%;
+        padding: 10px;
+        background-color: $back-Color;
+     }
 }
 
 /* pages Contactos */
 .contactoContenedor{
-    background-color: rgba(0, 0, 0, 0.483);
+    background-color: rgba(0, 0, 0, 0.56);
     margin-top: 50px;
     margin-bottom: 250px;
-    
+    position: relative;
 }
 
 /* Aplicando Queries */
@@ -205,17 +204,18 @@ footer a{
         grid-template-columns: 1fr;
     }
 
-header nav div ul{
+    header nav div{
+        display: flex;
+        flex-direction: column;
+    }
+    header nav div ul li{
+        font-size: 25px;
+    }
+
+    footer {
     display: flex;
     flex-direction: column;
-}
-header nav div ul li{
-    font-size: 25px;
-}
-footer {
-    display: flex;
-    flex-direction: column;
-}
+    }
     /* aplicando medias quieries page producto */
     .producto__item{
         display: grid;
@@ -224,7 +224,7 @@ footer {
     .producto__item .producto p{
         font-size: 1rem;
     }
-/* aplicando medias quieries page picadas y souveniers */
+    /* aplicando medias quieries page picadas y souveniers */
 .picadas__item{
     display: grid;
     grid-template-columns: 1fr;
@@ -234,8 +234,9 @@ footer {
    .promo__item{
     display: grid;
     grid-template-columns: 1fr;
-   }
+    }
 } 
+
 @media screen and (min-width:788px){
     header nav div ul{
         display: flex;
@@ -254,30 +255,26 @@ footer {
     /* aplicando medias quieries page producto */
     .producto__item{
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
     .producto__item .producto p{
         font-size: 1.7rem;
     }
      /* aplicando medias quieries page picadas y souveniers */
      .picadas__item{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        font-size: 1.3rem;
+        @include media788;
     }
     .Regalo__item{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        @include media788;
     }
    /* aplicando medias quieries page promos */
    .promo__item{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }
-}
+
 @media screen and (min-width:1200px) {
-  
-  
     header{
         display: grid;
         grid-template-columns: 1fr 5fr;
@@ -301,7 +298,7 @@ footer {
     /* aplicando medias quieries page producto */
     .producto__item{
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
       }
-}
 
+}
