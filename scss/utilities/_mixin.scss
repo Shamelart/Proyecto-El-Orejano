@@ -1,0 +1,23 @@
+// uso de mixin
+@mixin regalo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $back-Color;
+    margin:auto;
+}
+
+@mixin pica{
+    display: grid;
+    grid-template-columns: 1fr;
+    font-size: 1rem;
+    color: $color;
+    margin: 2em 2em;
+    gap: 3em;
+}
+
+@mixin media788{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    font-size: 1.4rem;
+}
