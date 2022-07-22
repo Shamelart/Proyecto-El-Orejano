@@ -9,15 +9,17 @@
 
 @mixin pica{
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     font-size: 1rem;
     color: $color;
-    margin: 2em 2em;
+    margin: 5em 2em;
     gap: 3em;
 }
 
 @mixin media788{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     font-size: 1.4rem;
 }
+
+

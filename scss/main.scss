@@ -265,8 +265,8 @@ footer div {
         font-size: 1.7rem;
     }
      /* aplicando medias quieries 788 page picadas y souveniers */
-     .picadas__item{
-        @include media788;
+    .picadas__item{
+        @include pica;
     }
     .Regalo__item{
         @include media788;
@@ -282,11 +282,11 @@ footer div {
         }
     }
 }
+
 @media screen and (min-width:1200px) {
     header{
         display: grid;
         grid-template-columns: 1fr 5fr;
-       
     }
     header nav div ul {
         display: flex;
@@ -303,12 +303,26 @@ footer div {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
-    /* aplicando medias quieries 1200 page producto */
+    /* aplicando medias quieries 1200 page producto*/
     .producto__item{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
       }
-      /* aplicando medias quieries 1200 page producto */
+    /* aplicando medias quieries 1200 page picada y souveniers*/
+    .picadas__item{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        font-size: 1rem;
+        color: $color;
+        margin: 5em 2em;
+        gap: 3em;
+    }
+    .Regalo__item{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        font-size: 1.4rem;
+    }
+    /* aplicando medias quieries 1200 page promo */
       .promo__item{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -319,5 +333,4 @@ footer div {
                 height: 75%;
             }
         }
-
 }
