@@ -22,7 +22,7 @@ body:before{
     height: 100%;
     background-color: antiquewhite;
     position: absolute;
-    opacity: 0.25;
+    opacity: 0.3;
 }
 /* Aplicando estilo a mi encabezado */
 header{
@@ -155,7 +155,7 @@ footer div {
     @include regalo;
     position: relative;
     img {
-        width: 80%;
+        width: 90%;
     }
 }   
 .picadas__item{
@@ -182,8 +182,7 @@ footer div {
     justify-content: center;
     margin: 4em 0;
     img {
-        width: 70%;
-        height: 55%;
+        width: 80%;
         padding: 10px;
         background-color: $back-Color;
      }
@@ -211,12 +210,11 @@ footer div {
     header nav div ul li{
         font-size: 25px;
     }
-
-    footer {
+        footer {
     display: flex;
     flex-direction: column;
     }
-    /* aplicando medias quieries page producto */
+    /* aplicando medias quieries 480 page producto */
     .producto__item{
         display: grid;
         grid-template-columns: 1fr;
@@ -224,16 +222,21 @@ footer div {
     .producto__item .producto p{
         font-size: 1rem;
     }
-    /* aplicando medias quieries page picadas y souveniers */
+    /* aplicando medias quieries 480 page picadas y souveniers */
 .picadas__item{
     display: grid;
     grid-template-columns: 1fr;
     font-size: 1.3rem;
    }
-   /* aplicando medias quieries page promos */
+   /* aplicando medias quieries 480 page promos */
    .promo__item{
     display: grid;
     grid-template-columns: 1fr;
+    }
+    .promo{
+        img{
+            width: 60%;
+        }
     }
 } 
 
@@ -247,33 +250,38 @@ footer div {
     header nav div ul li a{
         text-align: center;
     }
+    
     footer{
         display: flex;
         flex-direction: row;
         justify-content:space-evenly;
     }
-    /* aplicando medias quieries page producto */
+    /* aplicando medias quieries 788 page producto */
     .producto__item{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
     .producto__item .producto p{
         font-size: 1.7rem;
     }
-     /* aplicando medias quieries page picadas y souveniers */
+     /* aplicando medias quieries 788 page picadas y souveniers */
      .picadas__item{
         @include media788;
     }
     .Regalo__item{
         @include media788;
     }
-   /* aplicando medias quieries page promos */
+   /* aplicando medias quieries 788 page promos */
    .promo__item{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    }
+    .promo{
+        img{
+            width: 80%;
+        }
     }
 }
-
 @media screen and (min-width:1200px) {
     header{
         display: grid;
@@ -295,10 +303,21 @@ footer div {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
-    /* aplicando medias quieries page producto */
+    /* aplicando medias quieries 1200 page producto */
     .producto__item{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
       }
+      /* aplicando medias quieries 1200 page producto */
+      .promo__item{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        .promo{
+            img{
+                width: 85%;
+                height: 75%;
+            }
+        }
 
 }
