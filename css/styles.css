@@ -9,7 +9,7 @@
   color: white;
   font-family: Georgia;
   justify-content: center;
-  background-color: rgba(22, 12, 3, 0.656);
+  background-color: rgba(22, 12, 3, 0.876);
   max-width: fit-content;
   margin: auto;
   position: relative; }
@@ -125,7 +125,7 @@ footer div {
 .producto__item {
   display: grid;
   grid-template-columns: 1fr;
-  font-size: 1rem;
+  font-size: 1.rem;
   text-align: center;
   color: white;
   margin: 5em 2em;
@@ -157,16 +157,40 @@ footer div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.678);
   margin: auto;
   position: relative; }
-  .picada img {
-    width: 90%; }
 
+  .picada img {
+    width: 350px;
+    height: 280px;
+    padding: 1em;
+  }
+
+.precio{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+}
+.carrito{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cantidad{
+  color: white;
+  align-self: end;
+  padding-bottom: 1em;
+}
+.carrito i{
+  color: white;
+}
 .picadas__item {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  font-size: 1rem;
+  font-size: 3em;
+  font-family: 'Times New Roman', Times, serif;
   color: white;
   margin: 5em 2em;
   gap: 3em; }
@@ -175,15 +199,21 @@ footer div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  margin: auto; }
-  .tabla img {
-    width: 80%; }
+  background-color: rgba(0, 0, 0, 0.792);
+  margin: auto;
+  position: relative; }
 
+  .tabla img {
+    width: 350px;
+    height: 280px;
+    padding: 1em;
+  }
+   
 .Regalo__item {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  font-size: 1rem;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 3em;
   color: white;
   margin: 5em 2em;
   gap: 3em; }
@@ -237,9 +267,9 @@ footer div {
   /* aplicando medias quieries 480 page promos */
   .promo__item {
     display: grid;
-    grid-template-columns: 1fr; }
-  .promo img {
-    width: 60%; } }
+    grid-template-columns: 1fr; 
+  }
+  }
 
 @media screen and (min-width: 788px) {
   header nav div ul {
@@ -301,7 +331,7 @@ footer div {
   .picadas__item {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    font-size: 1rem;
+    font-size: 1.4rem;
     color: white;
     margin: 5em 2em;
     gap: 3em; }
